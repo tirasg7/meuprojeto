@@ -1,0 +1,507 @@
+
+/* =====================================
+   1. VARIÁVEIS - DARK NEON
+===================================== */
+
+:root {
+  --fundo: #080b09;
+  --superficie: #111712;
+  --superficie-hover: #1b241d;
+
+  --tinta: #f5fff5;
+  --tinta-suave: #a5b5a7;
+
+  --azul: #39ff14;
+  --azul-escuro: #25c90b;
+
+  --marca-texto: #39ff14;
+  --linha: #29352c;
+
+  --raio: 16px;
+
+  --fonte-titulo: "Segoe UI", Arial, sans-serif;
+  --fonte-texto: system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+/* =====================================
+   2. RESET
+===================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* =====================================
+   3. CORPO DA PÁGINA
+===================================== */
+
+body {
+  background:
+    radial-gradient(
+      circle at top,
+      #17351c 0%,
+      #080b09 45%
+    );
+
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1rem;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.pagina {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 3rem;
+}
+
+/* =====================================
+   4. TÍTULOS E TEXTOS
+===================================== */
+
+h1, h2 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 2rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  color: var(--tinta-suave);
+  max-width: 65ch;
+}
+
+/* =====================================
+   5. CABEÇALHO
+===================================== */
+
+header {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+
+  background:
+    linear-gradient(
+      135deg,
+      #172b19,
+      #101610 65%,
+      #080b09
+    );
+
+  color: white;
+
+  padding: 3rem 2.5rem;
+
+  border: 1px solid #315b35;
+  border-bottom: 3px solid var(--azul);
+  border-radius: var(--raio);
+
+  box-shadow:
+    0 10px 40px rgba(0,0,0,0.4),
+    0 0 35px rgba(57,255,20,0.08);
+}
+
+header h1 {
+  margin: 0 0 0.7rem;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 800;
+}
+
+header p {
+  color: #b9cdbb;
+  font-size: 1.05rem;
+}
+
+/* FOTO DE PERFIL */
+
+.foto {
+  width: 145px;
+  height: 145px;
+
+  object-fit: cover;
+  border-radius: 50%;
+
+  border: 3px solid var(--azul);
+
+  box-shadow:
+    0 0 15px rgba(57,255,20,0.35),
+    0 0 35px rgba(57,255,20,0.12);
+
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.foto:hover {
+  transform: scale(1.05);
+
+  box-shadow:
+    0 0 25px rgba(57,255,20,0.5);
+}
+
+/* =====================================
+   6. SEÇÕES
+===================================== */
+
+.secao {
+  margin-top: 3rem;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(min(100%, 260px), 1fr));
+
+  gap: 1.2rem;
+}
+
+.secao > :not(.cartao) {
+  grid-column: 1 / -1;
+}
+
+.secao > h2 {
+  margin-bottom: 0.4rem;
+  justify-self: start;
+
+  color: var(--tinta);
+
+  border-left: 4px solid var(--azul);
+  padding-left: 0.8rem;
+}
+
+/* =====================================
+   7. CARTÕES
+===================================== */
+
+.cartao {
+  background:
+    linear-gradient(
+      145deg,
+      #151d16,
+      #101511
+    );
+
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+
+  padding: 1.5rem;
+
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+}
+
+.cartao:hover {
+  transform: translateY(-6px);
+
+  border-color: var(--azul);
+
+  background: var(--superficie-hover);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.35),
+    0 0 22px rgba(57,255,20,0.12);
+}
+
+.cartao h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.7rem;
+  color: var(--tinta);
+}
+
+/* =====================================
+   8. TAGS DE TECNOLOGIA
+===================================== */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.tag {
+  background: rgba(57,255,20,0.09);
+
+  color: var(--azul);
+
+  border: 1px solid rgba(57,255,20,0.3);
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+
+  transition: 0.2s;
+}
+
+.tag:hover {
+  background: var(--azul);
+  color: #080b09;
+}
+
+/* =====================================
+   9. FORMULÁRIOS
+===================================== */
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: var(--tinta);
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  flex: 1 1 220px;
+
+  padding: 0.8rem 1rem;
+
+  font: inherit;
+  color: var(--tinta);
+
+  background: #0b100c;
+
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+
+  outline: none;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--azul);
+
+  box-shadow:
+    0 0 0 3px rgba(57,255,20,0.12);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #718574;
+}
+
+/* =====================================
+   10. BOTÕES NEON
+===================================== */
+
+button {
+  font: inherit;
+  font-weight: 700;
+
+  color: #071007;
+
+  background: var(--azul);
+
+  border: 1px solid var(--azul);
+  border-radius: 10px;
+
+  padding: 0.75rem 1.3rem;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 4px 15px rgba(57,255,20,0.12);
+
+  transition:
+    background 0.2s,
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+button:hover {
+  background: #65ff47;
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 0 20px rgba(57,255,20,0.3);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 3px;
+}
+
+/* =====================================
+   11. LISTA DE TAREFAS
+===================================== */
+
+ul {
+  list-style: none;
+  margin-top: 0.75rem;
+}
+
+li {
+  background: var(--superficie);
+
+  border: 1px solid var(--linha);
+  border-radius: 10px;
+
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.6rem;
+
+  transition: border-color 0.2s;
+}
+
+li:hover {
+  border-color: var(--azul);
+}
+
+li label {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+
+  font-weight: 400;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  width: 1.1rem;
+  height: 1.1rem;
+
+  accent-color: var(--azul);
+  cursor: pointer;
+}
+
+/* =====================================
+   12. LINKS
+===================================== */
+
+a {
+  color: var(--azul);
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #8aff73;
+  text-decoration: underline;
+}
+
+.cartao a {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
+/* =====================================
+   13. RODAPÉ
+===================================== */
+
+footer {
+  margin-top: 3rem;
+  padding: 2rem 1.5rem;
+
+  text-align: center;
+
+  color: var(--tinta-suave);
+
+  background: #101611;
+
+  border: 1px solid var(--linha);
+  border-top: 2px solid var(--azul);
+
+  border-radius: var(--raio);
+}
+
+/* =====================================
+   14. RESPONSIVIDADE
+===================================== */
+
+@media (max-width: 600px) {
+
+  .pagina {
+    padding: 1rem;
+  }
+
+  header {
+    padding: 2rem 1.25rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1.2rem;
+  }
+
+  header p {
+    margin: 0 auto;
+  }
+
+  .foto {
+    width: 120px;
+    height: 120px;
+  }
+
+  .secao {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .cartao {
+    padding: 1.2rem;
+  }
+
+  form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+
+/* ACESSIBILIDADE */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}
